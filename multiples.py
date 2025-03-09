@@ -35,7 +35,7 @@ def create_line(counts, goal):
 
 # For each line calculate all multiples and their count, and prepare the line for output
 for line in content:
-    multiples_list = set()
+    multiples_list = []
     numbers = line.strip().split(" ")
     goal = int(numbers[2])
     list_ab = numbers[0:2]
@@ -44,10 +44,12 @@ for line in content:
         multiple = int(ab)
         count = 0
         while multiple < goal:
-            multiples_list.add(multiple)
+            multiples_list.append(multiple)
             count = count + 1
             multiple += int(ab)
         combined_count += count
+    multiples_list = list(set(multiples_list))  # remove duplicates
+    multiples_list.sort()
     multiples_output.append(create_line(multiples_list, goal))
     multiples_count.append(combined_count)
 
