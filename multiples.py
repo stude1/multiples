@@ -30,7 +30,6 @@ def create_line(counts, goal):
     output_line = str(goal) + ":"
     for item in counts:
         output_line += " " + str(item)
-    output_line += "\n"
     return output_line
 
 # For each line calculate all multiples and their count, and prepare the line for output
@@ -56,5 +55,7 @@ for line in content:
 sorted_output = sort_output(multiples_output, multiples_count)
 
 for line in sorted_output:
+    print(line)
+    line += "\n"
     output_file.write(line)
 output_file.close()
