@@ -9,7 +9,7 @@ Python installed. Tested with 3.9, should work with any supported version.
 python multiples.py <input_file> <output_file>
 ```
 
-Input needs to be a text file with lines having three integers:
+Input needs to be a text file with lines having three integers, each separated by a single space:
 ```
 A B Goal
 ```
